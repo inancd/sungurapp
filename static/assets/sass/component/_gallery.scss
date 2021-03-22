@@ -1,0 +1,14 @@
+.gallery {
+  &__button {
+    width: 100% ;
+    display: flex;
+    justify-content: center;
+    margin-top:2rem
+  }
+
+  &__btn-dark {
+    color: #fff;
+    border-radius: 0;
+    background-color: #3c545e;
+  }
+}

@@ -1,0 +1,27 @@
+.navbar-collapse {
+  width: auto;
+  @media (max-width: 640px) {
+    width: 100%;
+    
+  }
+}
+.nav-link {
+  color: #303030;
+}
+
+.navbar-social {
+  &__bar {
+    list-style-type: none;
+    display: flex;
+  }
+  &__item {
+
+  }
+  &__link {
+    text-decoration: none;
+  }
+  &__icon {
+    color: #303030;
+    margin-left: 10px;
+  }
+}

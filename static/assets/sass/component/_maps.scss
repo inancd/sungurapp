@@ -1,0 +1,46 @@
+.maps-title {
+  width: 100px;
+  margin: 0 auto;
+  border-top: 4px solid #ccd8c1;
+  border-left: 4px solid #ccd8c1;
+  margin-bottom: 2rem ;
+  h3 {
+    font-family: var(--font-family-roboto);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.maps-description {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  p{
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+.maps-card {
+  position: relative;
+  img{
+    border-radius:20px;
+  }
+  &__description {
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 20px;
+    position: absolute;
+    bottom:-20px;
+    left: 10px;
+    padding: 0.5rem 0.9rem;
+    h4 {
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    p{
+      color:#fff;
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+  }
+}
