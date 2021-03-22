@@ -25,7 +25,7 @@ SECRET_KEY = 's1ww6lly_&i0&b)2&s6ih7ynm2lw2#5qz*khaujecv28mu9m1i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['159.89.148.148', 'www.sunguralpoptik.com.tr', 'sunguralpoptik.com.tr', 'localhost']
 
 
 # Application definition
