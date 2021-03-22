@@ -1,4 +1,4 @@
-"""sungurapp URL Configuration
+"""sunguralppy URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from glasses import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
+    path('', views.home, name='home'),
+    path('hakkimizda/', views.aboutus, name='about'),
+    path('galeri/', views.gallery, name="gallery"),
+    path('markalarimiz/', views.brands, name="brands"),
+    path('magazalarimiz/<int:id>/', views.store, name='store'),
+    path('teknolojimiz', views.technology, name='technology'),
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

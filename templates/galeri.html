@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block wrapper %}
+    <!-- SungurAlp Header -->
+    <section class="header-product">
+        <div class="container">
+            <div class="header-brod">
+                <div class="header-title">
+                    <h2>Ürünlerimiz</h2>
+                </div>
+                <div class="header-bread">
+                    <a href="index.html"> Ana Sayfa / </a>
+                    <a href="index.html">Ürünlerimiz</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SungurAlp Products -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                {% for foo in query %}
+                    <div class="col-md-3 mrg-bottom-20"><img src="{{ foo.image.url }}" alt=""
+                                                             class="img-fluid"></div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block wrapper %}
+    <!-- SungurAlp Header -->
+    <section class="header-product">
+        <div class="container">
+            <div class="header-brod">
+                <div class="header-title">
+                    <h2>Mağazalarımız</h2>
+                </div>
+                <div class="header-bread">
+                    <a href="index.html"> Ana Sayfa / </a>
+                    <a href="about-us.html">Mağazalarımız</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h1 class="store-board">{{ query.title }}</h1>
+            <div class="row">
+                <div class="col-md-4 store-wrapper">
+                    <h3>Adres</h3>
+                    <p>{{ query.adres }}</p>
+                </div>
+                <div class="col-md-4 store-wrapper">
+                    <h3>Telefon</h3>
+                    <p>{{ query.telefon }}</p>
+                </div>
+                <div class="col-md-4 store-wrapper">
+                    <h3>Mail</h3>
+                    <p>{{ query.email }}</p>
+                </div>
+            </div>
+
+            <div class="store-photo">
+                <div class="row">
+                    {% for foo in store %}
+                        <div class="col-md-3 mrg-bottom-20"><a
+                                href="{{ foo.image.url }}"
+                                class="example-image-link"
+                                data-lightbox="example-set"><img
+                                src="{{ foo.image.url }}" alt=""
+                                class="img-fluid example-image"></a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+        <div class="store-maps">
+            <iframe src="{{ query.maps }}"
+                    width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,100 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+    <script src="https://kit.fontawesome.com/a68a66a524.js" crossorigin="anonymous"></script>
+    <title>Sunguralp Optik</title>
+</head>
+<body>
+<!-- SungurAlp Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container justify-content-between">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'assets/images/logo.png' %}" alt="" width="250px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gallery' %}">Galeri</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'brands' %}">Markalarımız</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Mağazalarımız
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/magazalarimiz/1">Şirinyer</a></li>
+                        <li><a class="dropdown-item" href="/magazalarimiz/2">Buca</a></li>
+                        <li><a class="dropdown-item" href="/magazalarimiz/3">Gaziemir</a></li>
+                        <li><a class="dropdown-item" href="/magazalarimiz/4">Menderes</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'technology' %}">Teknolojimiz</a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="navbar-social">
+            <ul class="navbar-social__bar">
+                <li class="navbar-social__item"><a href="https://www.instagram.com/sunguralpoptik" class="navbar-social__link"><i
+                        class="fab fa-instagram navbar-social__icon"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{% block wrapper %}
+
+{% endblock %}
+<section class="section">
+    <div class="footer">
+        <div class="container">
+            <p>Sunguralp Optik ©Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+</section>
+
+<script src="{% static 'assets/js/jquery-v351.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/lightbox.min.js' %}"></script>
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    })
+</script>
+</body>
+</html>

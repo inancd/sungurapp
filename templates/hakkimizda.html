@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block wrapper %}
+    <!-- SungurAlp Header -->
+    <section class="header-product">
+        <div class="container">
+            <div class="header-brod">
+                <div class="header-title">
+                    <h2>Hakkımızda</h2>
+                </div>
+                <div class="header-bread">
+                    <a href="index.html"> Ana Sayfa / </a>
+                    <a href="about-us.html">Hakkımızda</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SungurAlp About Us -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="{{ query.image.url }}" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-7">
+                    <div class="title-board">
+                        <h3>Hakkımızda</h3>
+                    </div>
+                    <p>{{ query.description }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block wrapper %}
+    <!-- SungurAlp Slider -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+            {% for foo in query %}
+                <div class="carousel-item {% if forloop.first %}active {% endif %}">
+                    <img src="{{ foo.slider.url }}" class="d-block w-100 " alt="...">
+                </div>
+            {% endfor %}
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
+    </div>
+
+    <!-- SungurAlp Owl Slider -->
+    <section class="our-brands">
+        <div class="container">
+            <div class="owl-carousel owl-theme">
+                {% for foo in owl %}
+                    <div class="item"><img src="{{ foo.image.url }}" alt="" class="img-fluid"></div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- SungurAlp Board -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="board">
+                        <img src="{% static 'assets/images/optik.png' %}" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="board">
+                        <img src="{% static 'assets/images/gunes.png' %}" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SungurAlp Maps -->
+    <section class="section">
+        <div class="container">
+            <div class="maps-title">
+                <h3>Mağazalarımız</h3>
+            </div>
+            <div class="maps-description">
+                <p>Sunguralp optik dört mağazasıyla müşterilerine hizmet vermektedir. Mağaza bilgilerine aşağıdan
+                    ulaşabilir,
+                    <br>istediğiniz mağazaya tıklayarak harita bilgisini alabilirsiniz.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mrg-bottom">
+                    <div class="maps-card">
+                        <div class="maps-card__image">
+                            <a href="/magazalarimiz/1"><img
+                                    src="{% static 'assets/images/store/buca/20200618_142006.jpg' %}" alt=""
+                                    class="img-fluid"></a>
+                        </div>
+                        <div class="maps-card__description">
+                            <h4>Şirinyer</h4>
+                            <p>Menderes Cad. No:190/A Şirinyer/İzmir</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mrg-bottom">
+                    <div class="maps-card">
+                        <div class="maps-card__image">
+                            <a href="/magazalarimiz/2"><img
+                                    src="{% static 'assets/images/store/dualoptik/20200618_140904.jpg' %}" alt=""
+                                    class="img-fluid"></a>
+                        </div>
+                        <div class="maps-card__description">
+                            <h4>Buca</h4>
+                            <p>Barış Mah. Menderes Cad. No:174/A Buca/İzmir</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mrg-bottom">
+                    <div class="maps-card">
+                        <div class="maps-card__image">
+                            <a href="/magazalarimiz/3"><img
+                                    src="{% static 'assets/images/store/gaziemir/20200618_155243.jpg' %}" alt=""
+                                    class="img-fluid"></a>
+                        </div>
+                        <div class="maps-card__description">
+                            <h4>Gaziemir</h4>
+                            <p>Önder Cad. No:93/B Gaziemir/İzmir</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mrg-bottom">
+                    <div class="maps-card">
+                        <div class="maps-card__image">
+                            <a href="/magazalarimiz/4"><img
+                                    src="{% static 'assets/images/store/menderes/20200618_161618.jpg' %}" alt=""
+                                    class="card-img"></a>
+                        </div>
+                        <div class="maps-card__description">
+                            <h4>Menderes</h4>
+                            <p>Kasımpaşa Mah. İnenü Cd. No:1/B Menderes/İzmir</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-2">
+        <div class="container-fluid">
+            <div class="maps-title">
+                <h3>Galeri</h3>
+            </div>
+            <div class="gallery">
+                <div class="row g-0">
+                    {% for foo in gallery %}
+                        <div class="col-md-2">
+                            <a href="{{ foo.image.url }}"
+                               class="example-image-link"
+                               data-lightbox="example-set">
+                                <img src="{{foo.image.url}}" alt=""
+                                     class="img-fluid example-image">
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="gallery__button">
+                <a href="{% url 'gallery' %}" class="btn gallery__btn-dark">Tüm Galeri</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
